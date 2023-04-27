@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.ForumPage">
+   <children>
+      <ListView fx:id="listForum" layoutX="14.0" layoutY="18.0" onMouseClicked="#openForum" prefHeight="300.0" prefWidth="197.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="Add new" />
+                  <MenuItem mnemonicParsing="false" text="Update" />
+                  <MenuItem mnemonicParsing="false" text="Delete" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </ListView>
+      <TreeView fx:id="commentTree" layoutX="227.0" layoutY="18.0" prefHeight="234.0" prefWidth="358.0" />
+      <TextArea fx:id="commentBody" layoutX="227.0" layoutY="257.0" prefHeight="63.0" prefWidth="358.0" />
+      <Button layoutX="506.0" layoutY="361.0" mnemonicParsing="false" onAction="#addComment" prefHeight="25.0" prefWidth="79.0" text="Comment" />
+      <Button layoutX="45.0" layoutY="361.0" mnemonicParsing="false" onAction="#createNewForum" prefHeight="25.0" prefWidth="121.0" text="Create Forum" />
+      <TextField fx:id="newForumField" layoutX="31.0" layoutY="327.0" promptText="Forum name" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="575.0" prefWidth="1033.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.MainPage">
+    <TabPane fx:id="mainPageTabs" layoutY="28.0" prefHeight="372.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="28.0">
+        <Tab fx:id="truckManTab" text="Truck Management">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TextField fx:id="markeField" layoutX="14.0" layoutY="14.0" promptText="Enter Make" />
+                <TextField fx:id="modelField" layoutX="14.0" layoutY="59.0" promptText="Enter Model" />
+                <TextField fx:id="yearField" layoutX="14.0" layoutY="104.0" promptText="Enter Year" />
+                <TextField fx:id="odometerField" layoutX="118.0" layoutY="135.0" prefHeight="25.0" prefWidth="45.0" promptText=" km" />
+                <TextField fx:id="capacityTankField" layoutX="118.0" layoutY="169.0" prefHeight="25.0" prefWidth="45.0" promptText="litres" />
+                <ComboBox fx:id="tyreTypeField" layoutX="14.0" layoutY="203.0" prefWidth="150.0" />
+                <Label layoutX="414.0" layoutY="13.0" text="Company Owned Trucks">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Label layoutX="14.0" layoutY="139.0" text="Odometer:" />
+                <Label layoutX="14.0" layoutY="173.0" text="Fuel Tank Capacity:" />
+                <Button layoutX="14.0" layoutY="277.0" mnemonicParsing="false" onAction="#createTruck" prefHeight="25.0" prefWidth="151.0" text="Add" />
+                <Button layoutX="14.0" layoutY="314.0" mnemonicParsing="false" onAction="#DeleteTruck" prefHeight="25.0" prefWidth="151.0" text="Delete" />
+                <Button layoutX="14.0" layoutY="240.0" mnemonicParsing="false" onAction="#UpdateTruck" prefHeight="25.0" prefWidth="150.0" text="Update" />
+                <TableView fx:id="truckListField" layoutX="174.0" layoutY="48.0" onMouseClicked="#GetSelectedTruck" prefHeight="456.0" prefWidth="686.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="48.0">
+                    <columns>
+                        <TableColumn prefWidth="47.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="138.0" text="Marke">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="marke" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="144.0" text="Model">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="model" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="101.0" text="Year">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="year" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="138.0" text="Odometer">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="odometer" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="150.0" text="Fuel Cap.">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="fuelTankCapacity" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="127.0" text="Tyre Type">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="tyreType" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="cargoManTab" text="Cargo Management">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TableView fx:id="CargoTable" layoutX="213.0" layoutY="42.0" onMouseClicked="#getSelectedCargo" prefHeight="451.0" prefWidth="799.0">
+                    <columns>
+                        <TableColumn prefWidth="52.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="135.0" text="Title">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="title" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="105.0" text="Date Created">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dateCreated" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="102.0" text="Date Updated">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dateUpdated" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="94.0" text="Weight">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="weight" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="147.0" text="Type">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="cargoType" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="163.0" text="Customer">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="customer" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Label layoutX="571.0" prefHeight="43.0" prefWidth="83.0" text="Cargo">
+                    <font>
+                        <Font name="System Bold" size="25.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="cargoTitleField" layoutX="14.0" layoutY="43.0" prefHeight="25.0" prefWidth="186.0" promptText="Enter title" />
+                <TextField fx:id="cargoWeightField" layoutX="14.0" layoutY="90.0" prefHeight="25.0" prefWidth="186.0" promptText="Enter weight" />
+                <ComboBox fx:id="cargoTypeComboBox" layoutX="14.0" layoutY="134.0" prefHeight="25.0" prefWidth="186.0" promptText="Cargo Type" />
+                <TextField fx:id="cargoCustomerField" layoutX="15.0" layoutY="177.0" prefHeight="25.0" prefWidth="185.0" promptText="Enter Customer" />
+                <Button layoutX="16.0" layoutY="247.0" mnemonicParsing="false" onAction="#updateCargo" prefHeight="25.0" prefWidth="181.0" text="Update" />
+                <Button layoutX="16.0" layoutY="286.0" mnemonicParsing="false" onAction="#createCargo" prefHeight="25.0" prefWidth="181.0" text="Add" />
+                <Button layoutX="16.0" layoutY="324.0" mnemonicParsing="false" onAction="#deleteCargo" prefHeight="25.0" prefWidth="181.0" text="Delete" />
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="destinationManTab" text="Destinations">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <Button layoutX="459.0" layoutY="456.0" mnemonicParsing="false" onAction="#CreateDestination" text="Create Destination" />
+                <Button fx:id="deleteDestinationButton" layoutX="362.0" layoutY="456.0" mnemonicParsing="false" onAction="#DeleteDestination" prefHeight="25.0" prefWidth="70.0" text="Delete" />
+                <TableView fx:id="destinationTable" layoutX="111.0" layoutY="43.0" onMouseClicked="#GetSelectedDestination" prefHeight="393.0" prefWidth="811.0">
+                    <columns>
+                        <TableColumn fx:id="colDestId" prefWidth="28.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestStartCity" prefWidth="94.0" text="Start City">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="startCity" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestEndCity" prefWidth="94.0" text="End City">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="endCity" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestTruck" prefWidth="120.0" text="Truck">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="truckId" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestDriver" prefWidth="120.0" text="Driver">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="driverId" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestCargo" prefWidth="120.0" text="Cargo">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="cargoId" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestCreated" prefWidth="75.0" text="Created">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dateCreated" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="colDestUpdated" prefWidth="75.0" text="Updated">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="dateUpdated" />
+                            </cellValueFactory>
+                        </TableColumn>
+                  <TableColumn fx:id="colDestCompleted" prefWidth="84.0" text="Completed">
+                        <cellValueFactory>
+                            <PropertyValueFactory property="isCompleted" />
+                        </cellValueFactory>
+                    </TableColumn>
+                    </columns>
+                </TableView>
+                <Label layoutX="448.0" layoutY="6.0" prefHeight="34.0" prefWidth="137.0" text="Destinations">
+                    <font>
+                        <Font name="System Bold" size="23.0" />
+                    </font>
+                </Label>
+            <Button fx:id="toDestDetailsMenuButton" layoutX="601.0" layoutY="456.0" mnemonicParsing="false" onAction="#GoToDestDetailsMenu" text="Details" />
+            <Button layoutX="681.0" layoutY="456.0" mnemonicParsing="false" onAction="#OpenStatistics" text="Statistics" />
+            <TextField fx:id="filterDestField" layoutX="111.0" layoutY="11.0" promptText="Search" />
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="driverManTab" text="Driver Management">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TextField fx:id="driverLoginField" layoutX="14.0" layoutY="14.0" promptText="login" />
+                <TextField fx:id="driverPasswordField" layoutX="14.0" layoutY="54.0" promptText="password" />
+                <TextField fx:id="driverNameField" layoutX="14.0" layoutY="94.0" promptText="name" />
+                <Label layoutX="554.0" layoutY="13.0" text="Driver List">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="driverDeleteButton" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#DeleteDriver" prefHeight="25.0" prefWidth="151.0" text="Delete" />
+                <Button fx:id="driverUpdateButton" layoutX="13.0" layoutY="399.0" mnemonicParsing="false" onAction="#UpdateDriver" prefHeight="25.0" prefWidth="151.0" text="Update" />
+                <TableView fx:id="driverListField" layoutX="174.0" layoutY="48.0" onMouseClicked="#GetSelectedDriver" prefHeight="456.0" prefWidth="686.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="48.0">
+                    <columns>
+                        <TableColumn prefWidth="37.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="85.0" text="Login">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="login" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="91.0" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="103.0" text="Surname">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="surname" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="79.0" text="Birth Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="birthDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="127.0" text="Phone Number">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="phoneNum" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="82.0" text="Med Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="medCertificateDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="133.0" text="Med Number">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="phoneNum" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="108.0" text="Driver License">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="driverLicense" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Button fx:id="driverAddButton" layoutX="14.0" layoutY="439.0" mnemonicParsing="false" onAction="#createDriver" prefHeight="25.0" prefWidth="151.0" text="Add" />
+                <TextField fx:id="driverSurnameField" layoutX="14.0" layoutY="134.0" promptText="surname" />
+                <TextField fx:id="driverLicenseField" layoutX="14.0" layoutY="334.0" promptText="driver license" />
+                <TextField fx:id="driverPhoneNumField" layoutX="14.0" layoutY="214.0" promptText="phone number" />
+                <DatePicker fx:id="driverBirthDateField" layoutX="13.0" layoutY="174.0" prefHeight="25.0" prefWidth="151.0" promptText="birth date" />
+                <DatePicker fx:id="driverMedDateField" layoutX="14.0" layoutY="254.0" prefHeight="25.0" prefWidth="150.0" promptText="med date" />
+                <TextField fx:id="driverMedNumberField" layoutX="14.0" layoutY="294.0" promptText=" med number" />
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="managerManTab" text="Manager Management">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <TextField fx:id="managerLoginField" layoutX="14.0" layoutY="14.0" promptText="login" />
+                <TextField fx:id="managerPasswordField" layoutX="14.0" layoutY="54.0" promptText="password" />
+                <TextField fx:id="managerNameField" layoutX="14.0" layoutY="94.0" promptText="name" />
+                <Label layoutX="542.0" layoutY="13.0" text="Manager List">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+                <Button fx:id="managerDeleteButton" layoutX="14.0" layoutY="479.0" mnemonicParsing="false" onAction="#deleteManager" prefHeight="25.0" prefWidth="151.0" text="Delete" />
+                <Button fx:id="managerUpdateButton" layoutX="13.0" layoutY="399.0" mnemonicParsing="false" onAction="#UpdateManager" prefHeight="25.0" prefWidth="151.0" text="Update" />
+                <TableView fx:id="ManagerListField" layoutX="174.0" layoutY="48.0" onMouseClicked="#GetSelectedManager" prefHeight="456.0" prefWidth="686.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="174.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="48.0">
+                    <columns>
+                        <TableColumn prefWidth="37.0" text="ID">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="id" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="75.0" text="Login">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="login" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="91.0" text="Name">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="name" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="103.0" text="Surname">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="surname" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="85.0" text="Birth Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="birthDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="136.0" text="Phone Number">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="phoneNum" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="121.0" text="Email">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="email" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn minWidth="0.0" prefWidth="140.0" text="Employment Date">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="employmentDate" />
+                            </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="57.0" text="Is Admin">
+                            <cellValueFactory>
+                                <PropertyValueFactory property="isAdmin" />
+                            </cellValueFactory>
+                        </TableColumn>
+                    </columns>
+                </TableView>
+                <Button fx:id="managerAddButton" layoutX="14.0" layoutY="439.0" mnemonicParsing="false" onAction="#createManager" prefHeight="25.0" prefWidth="151.0" text="Add" />
+                <TextField fx:id="managerSurnameField" layoutX="14.0" layoutY="134.0" promptText="surname" />
+                <TextField fx:id="managerPhoneNumberField" layoutX="14.0" layoutY="214.0" promptText="phone number" />
+                <DatePicker fx:id="managerBirthDateField" layoutX="13.0" layoutY="174.0" prefHeight="25.0" prefWidth="151.0" promptText="birth date" />
+                <DatePicker fx:id="managerEmploymentDateField" layoutX="14.0" layoutY="294.0" prefHeight="25.0" prefWidth="150.0" promptText="employment date" />
+                <TextField fx:id="managerEmailField" layoutX="14.0" layoutY="254.0" promptText="email" />
+                <CheckBox fx:id="managerIsAdminCheck" layoutX="55.0" layoutY="334.0" mnemonicParsing="false" text="Is Admin" />
+            </AnchorPane>
+        </Tab>
+        <Tab fx:id="driverOrdersTab" text="Your Current Orders">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                <Button layoutX="467.0" layoutY="457.0" mnemonicParsing="false" onAction="#completeOrder" text="Complete Order" />
+            <TableView fx:id="driverOrderTable" layoutX="112.0" layoutY="34.0" prefHeight="393.0" prefWidth="811.0">
+               <columns>
+                  <TableColumn prefWidth="28.0" text="ID">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="94.0" text="Start City">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="startCity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="94.0" text="End City">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="endCity" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="120.0" text="Truck">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="truckId" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="120.0" text="Driver">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="driverId" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="120.0" text="Cargo">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="cargoId" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Created">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="dateCreated" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="75.0" text="Updated">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="dateUpdated" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="84.0" text="Completed">
+                     <cellValueFactory>
+                        <PropertyValueFactory property="isCompleted" />
+                     </cellValueFactory>
+                  </TableColumn>
+               </columns>
+            </TableView>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+    <Button layoutX="6.0" layoutY="2.0" mnemonicParsing="false" onAction="#goToForum" text="Forum" />
+</AnchorPane>

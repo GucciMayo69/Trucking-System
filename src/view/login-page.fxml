@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="220.0" prefWidth="291.0" style="-fx-background-color: #3D4956;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.LoginPage">
+   <children>
+      <PasswordField fx:id="passwordField" layoutX="55.0" layoutY="68.0" prefHeight="25.0" prefWidth="181.0" promptText="password" />
+      <JFXButton layoutX="99.0" layoutY="129.0" onAction="#validate" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #FEFEFE;" text="Log In" />
+      <JFXButton layoutX="99.0" layoutY="168.0" onAction="#register" prefHeight="25.0" prefWidth="94.0" style="-fx-background-color: #FEFEFE;" text="Register" />
+      <TextField fx:id="loginField" layoutX="55.0" layoutY="29.0" prefHeight="25.0" prefWidth="181.0" promptText="login" />
+      <CheckBox fx:id="isManagerCheck" layoutX="112.0" layoutY="102.0" mnemonicParsing="false" text="Manager" textFill="WHITE" />
+   </children>
+</AnchorPane>

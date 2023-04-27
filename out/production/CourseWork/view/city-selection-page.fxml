@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="232.0" prefWidth="255.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.DestinationSelectionPage">
+   <children>
+      <ComboBox fx:id="startCityComboBox" layoutX="53.0" layoutY="64.0" prefWidth="150.0" promptText="Start City" />
+      <ComboBox fx:id="endCityComboBox" layoutX="53.0" layoutY="104.0" prefWidth="150.0" promptText="End City" />
+      <Button fx:id="toRespManagersWindowButton" layoutX="107.0" layoutY="149.0" mnemonicParsing="false" onAction="#GoToRespManagersWindow" text="Next" />
+   </children>
+</AnchorPane>

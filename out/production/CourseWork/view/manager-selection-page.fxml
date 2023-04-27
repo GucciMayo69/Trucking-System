@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="430.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxControllers.DestinationSelectionPage">
+    <Button fx:id="toCheckpointWindowButton" layoutX="195.0" layoutY="369.0" mnemonicParsing="false" onAction="#GoToCheckpointWindow" text="Next" />
+    <Label layoutX="107.0" layoutY="2.0" text="Select Responsible Managers">
+        <font>
+            <Font name="System Bold" size="16.0" />
+        </font>
+    </Label>
+    <ListView fx:id="respManagersListView" layoutX="115.0" layoutY="27.0" onMouseClicked="#SelectManagers" prefHeight="335.0" prefWidth="200.0" />
+   <Label layoutX="318.0" layoutY="27.0" prefHeight="335.0" prefWidth="111.0" text="You will be automatically assigned if no other manager is selected" textAlignment="CENTER" wrapText="true">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font>
+   </Label>
+</AnchorPane>

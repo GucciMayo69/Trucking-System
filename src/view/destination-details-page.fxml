@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="502.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="fxControllers.MainPage">
+   <ListView fx:id="checkpointDetailListView" layoutX="21.0" layoutY="39.0" prefHeight="341.0" prefWidth="217.0"/>
+   <Label layoutX="75.0" layoutY="5.0" text="Checkpoints">
+      <font>
+         <Font name="System Bold" size="19.0"/>
+      </font>
+   </Label>
+   <ListView fx:id="respManDetailListView" layoutX="263.0" layoutY="39.0" prefHeight="341.0" prefWidth="217.0"/>
+   <Label layoutX="271.0" layoutY="5.0" text="Responsible Managers">
+      <font>
+         <Font name="System Bold" size="19.0"/>
+      </font>
+   </Label>
+</AnchorPane>
